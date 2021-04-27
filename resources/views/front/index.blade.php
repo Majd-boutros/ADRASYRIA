@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-
+        <!-- Start Our Team -->
         <section id="team" class="pb-5">
             <div class="container">
                 <h5 class="section-title h1">OUR TEAM</h5>
@@ -340,10 +340,10 @@
                         </div>
                     </div>
                     <!-- ./Team member -->
-
                 </div>
             </div>
         </section>
+        <!-- End Our Team -->
 
     </div>
 @endsection
