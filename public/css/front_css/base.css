@@ -1,3 +1,9 @@
+/* body */
+body{
+    background-color: #eee !important;
+}
+/* end body */
+
 /* Start Navbar */
 
 .my-navbar{
@@ -216,7 +222,10 @@
     color:#007b5d;
     border-bottom: 2px solid #007b5d;
     padding-bottom: 20px;
+    margin-bottom: 20px;
+    width: 240px;
 }
+
 
 .our_project{
     margin:45px 0px;
@@ -381,3 +390,47 @@ section .section-title {
 
 /* End Our Team */
 
+
+/* IMPACT SECTION */
+.impact .card{
+    border: none;
+    padding: 10px;
+    box-shadow: 0px 0px 40px 0px #007b5e52;
+    transition: all .7s ease-in-out;
+
+}
+.impact .card button{
+background: none;
+    border: none;
+    padding: 40px;
+}
+.impact .card button:active,
+.impact .card button:focus{
+    border: none;
+    box-shadow: none;
+}
+.impact .card button svg:not(:root).svg-inline--fa{
+    overflow: visible;
+    color: #007b62;
+    font-size: 55px;
+    transition: all .7s ease-in-out;
+
+}
+.impact .card:hover{
+    border:1px solid green;
+}
+.impact .card:hover button svg:not(:root).svg-inline--fa {
+   font-size: 60px;
+   color:#007b5e52;
+   transform: rotate(360deg);
+} 
+.impact .card .card-title{
+    text-align: center;
+    color: #007b62;
+}
+
+.modal-content{
+    width: 230% !important;
+    left: -320px;
+}
+/* END IMPACT SECTION */
