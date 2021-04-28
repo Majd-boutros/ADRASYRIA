@@ -350,25 +350,19 @@
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <div class="col">
                         <div class="card">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
-                                <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
-                            </button>
+                               <img src="{{url('/images/front/impact_icons/1.png')}}" class="card-img-top" alt=""> 
                             <h5 class="card-title">HEALTH</h5>
                         </div>
                         </div>
                         <div class="col">
                         <div class="card">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
-                                <i class="fa fa-book fa-lg" aria-hidden="true"></i>
-                            </button>
-                            <h5 class="card-title">HEALTH</h5>
+                                <img src="{{url('/images/front/impact_icons/2.png')}}" class="card-img-top" alt=""> 
+                            <h5 class="card-title">Education</h5>
                         </div>
                         </div>
                         <div class="col">
                         <div class="card">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
-                                <i class="fa fa-heartbeat fa-lg" aria-hidden="true"></i>
-                            </button>
+                                <img src="{{url('/images/front/impact_icons/3.png')}}" class="card-img-top"  alt=""> 
                             <h5 class="card-title">FOOD SECURITY</h5>
                         </div>
                         </div>
