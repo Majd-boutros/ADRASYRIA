@@ -53,6 +53,17 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
             Route::get('delete-image-carousel/{id}','CarouselController@DeleteImagesCarousel')->name('get.delete-images-carousel');
         });
 
+        //Impacts
+        Route::group(['namespace'=>'Impact'],function (){
+            Route::get('impacts','ImpactsController@impacts')->name('get.impacts');
+            Route::get('add-impact','ImpactsController@addImpact')->name('add.impact');
+        });
+
+        //Categories
+//        Route::group(['namespace'=>'Category'],function (){
+//            Route::get('categories','CategoriesController@categories')->name('get.categories');
+//        });
+
     });
 
 });
