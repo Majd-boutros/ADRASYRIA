@@ -28,5 +28,10 @@
     <link rel="stylesheet" href="{{url('plugins/daterangepicker/daterangepicker.css')}}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{url('plugins/summernote/summernote-bs4.min.css')}}">
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="{{url('plugins/codemirror/codemirror.css')}}">
+    <link rel="stylesheet" href="{{url('plugins/codemirror/theme/monokai.css')}}">
+    <!-- SimpleMDE -->
+    <link rel="stylesheet" href="{{url('plugins/simplemde/simplemde.min.css')}}">
     @yield('css')
 </head>

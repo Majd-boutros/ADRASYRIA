@@ -1,6 +1,6 @@
 @extends('layouts.admin_layout.admin_layout')
 @section('title')
-    Impacts
+    Donors
 @endsection
 @section('css')
     <!-- DataTables -->
@@ -15,12 +15,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Impacts</h1>
+                        <h1 class="m-0">Donors</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-                            <li class="breadcrumb-item active">Impacts</li>
+                            <li class="breadcrumb-item active">Donors</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -46,8 +46,8 @@
         @endif
         <div class="card-body">
             <div class="card-header">
-                <a href="{{route('add.impact')}}" style="max-width: 150px; float: right; display: inline-block" class="btn btn-block btn-success">
-                    Add Impact
+                <a href="{{route('add.donor')}}" style="max-width: 150px; float: right; display: inline-block" class="btn btn-block btn-success">
+                    Add Donors
                 </a>
             </div>
             <div class="card-body">
@@ -56,35 +56,33 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>Main Image</th>
+                        <th>Image</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @if(isset($impacts) && count($impacts) > 0)
-                        @foreach($impacts as $index=>$impact)
+                    @if(isset($donors) && count($donors) > 0)
+                        @foreach($donors as $index=>$donor)
                             <tr>
                                 <td>{{$index+1}}</td>
-                                <td>{{$impact['name']}}</td>
+                                <td>{{$donor['name']}}</td>
                                 <td>
-                                    <img src="{{asset('images/front/impact_images/'.str_replace(' ','_',$impact['name']).'/'.$impact['main_image'])}}" height="150" width="150" alt="main image">
+                                    <img src="{{asset('images/front/donors_images/'.str_replace(' ', '_', $donor['name']).'/'.$donor['image'])}}" height="150" width="150" alt="donor image">
                                 </td>
                                 <td>
-                                    @if($impact['status'] == 1)
-                                        <a title="Update status" href="javascript:void (0)" id="impact-{{$impact['id']}}" impact_id="{{$impact['id']}}" class="updateImpactStatus"><i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i></a>
-                                    @elseif($impact['status'] == 0)
-                                        <a title="Update status" href="javascript:void (0)" id="impact-{{$impact['id']}}" impact_id="{{$impact['id']}}" class="updateImpactStatus"><i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i></a>
+                                    @if($donor['status'] == 1)
+                                        <a title="Update status" href="javascript:void (0)" id="donor-{{$donor['id']}}" donor_id="{{$donor['id']}}" class="updateDonorStatus"><i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i></a>
+                                    @elseif($donor['status'] == 0)
+                                        <a title="Update status" href="javascript:void (0)" id="donor-{{$donor['id']}}" donor_id="{{$donor['id']}}" class="updateDonorStatus"><i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i></a>
                                     @endif
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a title="Details" href="{{route('get.impact.info',$impact['id'])}}"><i class="fas fa-info-circle"></i></a>
+                                    <a title="Edit donor" href="{{route('edit.donor',$donor['id'])}}"><i class="fas fa-edit"></i></a>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a title="Edit impact" href="{{route('edit.impact',$impact['id'])}}"><i class="fas fa-edit"></i></a>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a title="Delete impact" class="confirmDelete" record="impact" recordid="{{$impact['id']}}" href="javascript:void (0)"><i class="fas fa-trash"></i></a>
+                                    <a title="Delete donor" class="confirmDelete" record="donor" recordid="{{$donor['id']}}" href="javascript:void (0)"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach
-                        @endif
+                    @endif
                     </tbody>
                 </table>
             </div>

@@ -24,6 +24,11 @@
 <script src="{{url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 <!-- Summernote -->
 <script src="{{url('plugins/summernote/summernote-bs4.min.js')}}"></script>
+<!-- CodeMirror -->
+<script src="{{url('plugins/codemirror/codemirror.js')}}"></script>
+<script src="{{url('plugins/codemirror/mode/css/css.js')}}"></script>
+<script src="{{url('plugins/codemirror/mode/xml/xml.js')}}"></script>
+<script src="{{url('plugins/codemirror/mode/htmlmixed/htmlmixed.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 @yield('scripts')

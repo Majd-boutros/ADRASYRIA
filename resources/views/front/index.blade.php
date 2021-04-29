@@ -350,25 +350,25 @@
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <div class="col">
                         <div class="card">
-                               <img src="{{url('/images/front/impact_icons/1.png')}}" class="card-img-top" alt=""> 
+                               <img src="{{url('/images/front/impact_icons/1.png')}}" class="card-img-top" alt="">
                             <h5 class="card-title">HEALTH</h5>
                         </div>
                         </div>
                         <div class="col">
                         <div class="card">
-                                <img src="{{url('/images/front/impact_icons/2.png')}}" class="card-img-top" alt=""> 
+                                <img src="{{url('/images/front/impact_icons/2.png')}}" class="card-img-top" alt="">
                             <h5 class="card-title">Education</h5>
                         </div>
                         </div>
                         <div class="col">
                         <div class="card">
-                                <img src="{{url('/images/front/impact_icons/3.png')}}" class="card-img-top"  alt=""> 
+                                <img src="{{url('/images/front/impact_icons/3.png')}}" class="card-img-top"  alt="">
                             <h5 class="card-title">FOOD SECURITY</h5>
                         </div>
                         </div>
                     </div>
                 </section>
-        
+
                 {{-- MODALS OF IMPACT SECTION --}}
                 <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -400,7 +400,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">EMBRACE</h5>
                                   <p class="card-text">
-                                    EMBRACE focuses on improving and saving the lives of women, newborns, and children under five. The program achieves these objectives through instruction on health and nutrition, the building of health clinics and training programs for community health volunteers, traditional birth attendants, nurses and midwives. 
+                                    EMBRACE focuses on improving and saving the lives of women, newborns, and children under five. The program achieves these objectives through instruction on health and nutrition, the building of health clinics and training programs for community health volunteers, traditional birth attendants, nurses and midwives.
                                   </p>
                                 </div>
                                 <div class="card-footer">
@@ -422,7 +422,7 @@
                                 </div>
                               </div>
                             </div>
-        
+
                           </div>
                           {{--end modals card--}}
                         </div>
@@ -432,7 +432,7 @@
                       </div>
                     </div>
                   </div>
-                
+
                   <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -463,7 +463,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">EMBRACE</h5>
                                   <p class="card-text">
-                                    EMBRACE focuses on improving and saving the lives of women, newborns, and children under five. The program achieves these objectives through instruction on health and nutrition, the building of health clinics and training programs for community health volunteers, traditional birth attendants, nurses and midwives. 
+                                    EMBRACE focuses on improving and saving the lives of women, newborns, and children under five. The program achieves these objectives through instruction on health and nutrition, the building of health clinics and training programs for community health volunteers, traditional birth attendants, nurses and midwives.
                                   </p>
                                 </div>
                                 <div class="card-footer">
@@ -485,7 +485,7 @@
                                 </div>
                               </div>
                             </div>
-        
+
                           </div>
                           {{--end modals card--}}
                         </div>
@@ -495,7 +495,7 @@
                       </div>
                     </div>
                   </div>
-        
+
                   <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -526,7 +526,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">EMBRACE</h5>
                                   <p class="card-text">
-                                    EMBRACE focuses on improving and saving the lives of women, newborns, and children under five. The program achieves these objectives through instruction on health and nutrition, the building of health clinics and training programs for community health volunteers, traditional birth attendants, nurses and midwives. 
+                                    EMBRACE focuses on improving and saving the lives of women, newborns, and children under five. The program achieves these objectives through instruction on health and nutrition, the building of health clinics and training programs for community health volunteers, traditional birth attendants, nurses and midwives.
                                   </p>
                                 </div>
                                 <div class="card-footer">
@@ -548,7 +548,7 @@
                                 </div>
                               </div>
                             </div>
-        
+
                           </div>
                           {{--end modals card--}}
                         </div>
@@ -559,17 +559,21 @@
                     </div>
                   </div>
                   {{-- END MODALS --}}
-        
+
             </div>
-            <script>
-                var myModal = document.getElementById('myModal')
-                var myInput = document.getElementById('myInput')
-        
-                myModal.addEventListener('shown.bs.modal', function () {
-                myInput.focus()
-        })
-            </script>
+
             {{-- end impact section --}}
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        var myModal = document.getElementById('myModal')
+        var myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+        });
+    </script>
 @endsection
 

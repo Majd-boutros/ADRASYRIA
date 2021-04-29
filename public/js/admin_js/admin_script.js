@@ -66,7 +66,6 @@ $(document).ready(function () {
                 "status": status
             },
             success: function (res){
-                console.log(res.success);
                 if(res.success == true){
                     if(res.status == 1){
                         var icon = `<i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i>`;
@@ -80,5 +79,79 @@ $(document).ready(function () {
         });
     });
 
+    //Update Impact Status
+    $(document).on('click','.updateImpactStatus',function (){
+        var status = $(this).children('i').attr('status');
+        var impact_id = $(this).attr('impact_id');
+        $.ajax({
+            url: '/admin/update-impact-status',
+            type: 'POST',
+            data: {
+                "impact_id": impact_id,
+                "status": status
+            },
+            success: function (res){
+                if(res.success == true){
+                    if(res.status == 1){
+                        var icon = `<i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i>`;
+                        $('#impact-'+impact_id).html(icon);
+                    }else if(res.status == 0){
+                        var icon = `<i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i>`;
+                        $('#impact-'+impact_id).html(icon);
+                    }
+                }
+            },
+        });
+    });
+
+    //Update Category Status
+    $(document).on('click','.updateCategoryStatus',function (){
+        var status = $(this).children('i').attr('status');
+        var category_id = $(this).attr('category_id');
+        $.ajax({
+            url: '/admin/update-category-status',
+            type: 'POST',
+            data: {
+                "category_id": category_id,
+                "status": status
+            },
+            success: function (res){
+                if(res.success == true){
+                    if(res.status == 1){
+                        var icon = `<i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i>`;
+                        $('#category-'+category_id).html(icon);
+                    }else if(res.status == 0){
+                        var icon = `<i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i>`;
+                        $('#category-'+category_id).html(icon);
+                    }
+                }
+            },
+        });
+    });
+
+    //Update Donor Status
+    $(document).on('click','.updateDonorStatus',function (){
+        var status = $(this).children('i').attr('status');
+        var donor_id = $(this).attr('donor_id');
+        $.ajax({
+            url: '/admin/update-donor-status',
+            type: 'POST',
+            data: {
+                "donor_id": donor_id,
+                "status": status
+            },
+            success: function (res){
+                if(res.success == true){
+                    if(res.status == 1){
+                        var icon = `<i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i>`;
+                        $('#donor-'+donor_id).html(icon);
+                    }else if(res.status == 0){
+                        var icon = `<i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i>`;
+                        $('#donor-'+donor_id).html(icon);
+                    }
+                }
+            },
+        });
+    });
 
 });

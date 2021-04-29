@@ -56,13 +56,38 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
         //Impacts
         Route::group(['namespace'=>'Impact'],function (){
             Route::get('impacts','ImpactsController@impacts')->name('get.impacts');
+            Route::get('info-impact/{id}','ImpactsController@infoImpacts')->name('get.impact.info');
             Route::get('add-impact','ImpactsController@addImpact')->name('add.impact');
+            Route::post('store-impact','ImpactsController@storeImpact')->name('store.impact');
+            Route::get('edit-impact/{id}','ImpactsController@editImpact')->name('edit.impact');
+            Route::post('update-impact/{id}','ImpactsController@updateImpact')->name('update.impact');
+            Route::post('update-impact-status','ImpactsController@updatesImpactStatus')->name('update.impact.status');
+            Route::get('delete-impact/{id}','ImpactsController@deleteImpact')->name('delete.impact'); //delete impact
         });
 
         //Categories
-//        Route::group(['namespace'=>'Category'],function (){
-//            Route::get('categories','CategoriesController@categories')->name('get.categories');
-//        });
+        Route::group(['namespace'=>'Category'],function (){
+            Route::get('categories','CategoriesController@categories')->name('get.categories');
+            Route::get('add-category','CategoriesController@addCategory')->name('add.category');
+            Route::post('store-category','CategoriesController@storeCategory')->name('store.category');
+            Route::get('edit-category/{id}','CategoriesController@editCategory')->name('edit.category');
+            Route::post('update-category/{id}','CategoriesController@updateCategory')->name('update.category');
+            Route::post('update-category-status','CategoriesController@updatesCategoryStatus')->name('update.category.status');
+            Route::get('delete-category/{id}','CategoriesController@deleteCategory')->name('delete.category'); //delete category
+        });
+
+        //Donors
+        Route::group(['namespace'=>'Donor'],function (){
+            Route::get('donors','DonorsController@donors')->name('get.donors');
+            Route::get('add-donor','DonorsController@addDonor')->name('add.donor');
+            Route::post('store-donor','DonorsController@storeDonor')->name('store.donor');
+            Route::get('edit-donor/{id}','DonorsController@editDonor')->name('edit.donor');
+            Route::post('update-donor/{id}','DonorsController@updateDonor')->name('update.donor');
+            Route::post('update-donor-status','DonorsController@updatesDonorStatus')->name('update.donor.status');
+            Route::get('delete-donor/{id}','DonorsController@deleteDonor')->name('delete.donor'); //delete donor
+        });
+
+        //Projects
 
     });
 

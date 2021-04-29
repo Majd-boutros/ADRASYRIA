@@ -97,9 +97,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('get.categories')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Categories</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('get.donors')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Donors</p>
                             </a>
                         </li>
                         <li class="nav-item">

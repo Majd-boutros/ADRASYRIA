@@ -1,6 +1,6 @@
 @extends('layouts.admin_layout.admin_layout')
 @section('title')
-    Add Impact
+    Edit Impact
 @endsection
 
 @section('content')
@@ -9,12 +9,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Add Impact</h1>
+                        <h1 class="m-0">Edit Impact</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-                            <li class="breadcrumb-item active">Add Impact</li>
+                            <li class="breadcrumb-item active">Edit Impact</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -23,7 +23,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Add Impact</h3>
+                <h3 class="card-title">Edit Impact</h3>
             </div>
             @if($errors->any())
                 <br>
@@ -58,27 +58,36 @@
         @endif
         <!-- /.card-header -->
             <!-- form start -->
-            <form method="post" action="{{route('store.impact')}}" enctype="multipart/form-data" name="postImpactForm" id="postImpactForm">
+            <form method="post" action="{{route('update.impact',$impact['id'])}}" enctype="multipart/form-data" name="updateImpactForm" id="updateImpactForm">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" id="name" class="form-control">
+                        <input type="text" name="name" id="name" value="{{$impact['name']}}" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea id="summernote" name="description">
-                                Place <em>some</em> <u>text</u> <strong>here</strong>
-                        </textarea>
-{{--                        <textarea name="description" id="description" class="form-control" ></textarea>--}}
+                        <textarea name="description" id="description" class="form-control" required>{{$impact['description']}}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="main_image">Main Image</label>
-                        <input type="file" name="main_image" id="main_image" class="form-control" accept="image/*" >
+                        <input type="file" name="main_image" id="main_image" class="form-control" accept="image/*">
+                        @if($impact['main_image'] !== '')
+                            <br>
+                            <div>
+                                <img src="{{asset('images/front/impact_images/'.str_replace(' ','_',$impact['name']).'/'.$impact['main_image'])}}" height="150" width="150" alt="main image">
+                            </div>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label for="icon_image">Icon Image</label>
                         <input type="file" name="icon_image" id="icon_image" class="form-control" accept="image/*" >
+                        @if($impact['icon_image'] !== '')
+                            <br>
+                            <div>
+                                <img src="{{asset('images/front/impact_images/'.str_replace(' ','_',$impact['name']).'/'.$impact['icon_image'])}}" height="150" width="150" alt="main image">
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <!-- /.card-body -->
@@ -93,16 +102,4 @@
 @endsection
 
 @section('scripts')
-<script>
-    $(function () {
-        // Summernote
-        $('#summernote').summernote()
-
-        // CodeMirror
-        CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
-            mode: "htmlmixed",
-            theme: "monokai"
-        });
-    })
-</script>
 @endsection

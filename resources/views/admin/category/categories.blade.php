@@ -1,6 +1,6 @@
 @extends('layouts.admin_layout.admin_layout')
 @section('title')
-    Impacts
+    Categories
 @endsection
 @section('css')
     <!-- DataTables -->
@@ -15,12 +15,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Impacts</h1>
+                        <h1 class="m-0">Categories</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-                            <li class="breadcrumb-item active">Impacts</li>
+                            <li class="breadcrumb-item active">Categories</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -46,8 +46,8 @@
         @endif
         <div class="card-body">
             <div class="card-header">
-                <a href="{{route('add.impact')}}" style="max-width: 150px; float: right; display: inline-block" class="btn btn-block btn-success">
-                    Add Impact
+                <a href="{{route('add.category')}}" style="max-width: 150px; float: right; display: inline-block" class="btn btn-block btn-success">
+                    Add Category
                 </a>
             </div>
             <div class="card-body">
@@ -56,35 +56,31 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>Main Image</th>
+                        <th>Impact</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @if(isset($impacts) && count($impacts) > 0)
-                        @foreach($impacts as $index=>$impact)
+                    @if(isset($categories) && count($categories) > 0)
+                        @foreach($categories as $index=>$category)
                             <tr>
                                 <td>{{$index+1}}</td>
-                                <td>{{$impact['name']}}</td>
+                                <td>{{$category['name']}}</td>
+                                <td>{{$category['impact']['name']}}</td>
                                 <td>
-                                    <img src="{{asset('images/front/impact_images/'.str_replace(' ','_',$impact['name']).'/'.$impact['main_image'])}}" height="150" width="150" alt="main image">
-                                </td>
-                                <td>
-                                    @if($impact['status'] == 1)
-                                        <a title="Update status" href="javascript:void (0)" id="impact-{{$impact['id']}}" impact_id="{{$impact['id']}}" class="updateImpactStatus"><i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i></a>
-                                    @elseif($impact['status'] == 0)
-                                        <a title="Update status" href="javascript:void (0)" id="impact-{{$impact['id']}}" impact_id="{{$impact['id']}}" class="updateImpactStatus"><i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i></a>
+                                    @if($category['status'] == 1)
+                                        <a title="Update status" href="javascript:void (0)" id="category-{{$category['id']}}" category_id="{{$category['id']}}" class="updateCategoryStatus"><i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i></a>
+                                    @elseif($category['status'] == 0)
+                                        <a title="Update status" href="javascript:void (0)" id="category-{{$category['id']}}" category_id="{{$category['id']}}" class="updateCategoryStatus"><i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i></a>
                                     @endif
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a title="Details" href="{{route('get.impact.info',$impact['id'])}}"><i class="fas fa-info-circle"></i></a>
+                                    <a title="Edit category" href="{{route('edit.category',$category['id'])}}"><i class="fas fa-edit"></i></a>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a title="Edit impact" href="{{route('edit.impact',$impact['id'])}}"><i class="fas fa-edit"></i></a>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a title="Delete impact" class="confirmDelete" record="impact" recordid="{{$impact['id']}}" href="javascript:void (0)"><i class="fas fa-trash"></i></a>
+                                    <a title="Delete category" class="confirmDelete" record="category" recordid="{{$category['id']}}" href="javascript:void (0)"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach
-                        @endif
+                    @endif
                     </tbody>
                 </table>
             </div>
