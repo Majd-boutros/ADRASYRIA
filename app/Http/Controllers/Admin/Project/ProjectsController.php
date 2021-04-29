@@ -10,5 +10,15 @@ use Session;
 
 class ProjectsController extends Controller
 {
+    public function projects(){
+        return 'ss';
+    }
 
+    public function addProject(){
+        return view('admin.project.add_project');
+    }
+
+    public function storeProject(Request $request){
+        return $request;
+    }
 }

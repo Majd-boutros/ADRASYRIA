@@ -24,8 +24,10 @@
     <link rel="stylesheet" href="{{url('css/admin_css/adminlte.min.css')}}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
-    <!-- Daterange picker -->
+    <!-- daterange picker -->
     <link rel="stylesheet" href="{{url('plugins/daterangepicker/daterangepicker.css')}}">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
     <!-- summernote -->
     <link rel="stylesheet" href="{{url('plugins/summernote/summernote-bs4.min.css')}}">
     <!-- CodeMirror -->

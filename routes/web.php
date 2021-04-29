@@ -88,6 +88,12 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
         });
 
         //Projects
+        Route::group(['namespace'=>'Project'],function (){
+            Route::get('projects','ProjectsController@projects')->name('get.projects');
+            Route::get('add-project','ProjectsController@addProject')->name('add.project');
+            Route::post('store-project','ProjectsController@storeProject')->name('store.project');
+        });
+
 
     });
 

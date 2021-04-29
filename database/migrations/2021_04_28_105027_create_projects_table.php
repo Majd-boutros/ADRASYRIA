@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('budget');
             $table->text('description');
             $table->text('primary_beneficiaries');
-            $table->text('area');
+            $table->string('area');
             $table->string('main_image')->default('');
             $table->unsignedBigInteger('category_id');
             $table->date('start_date');

@@ -20,6 +20,10 @@
 <!-- daterangepicker -->
 <script src="{{url('plugins/moment/moment.min.js')}}"></script>
 <script src="{{url('plugins/daterangepicker/daterangepicker.js')}}"></script>
+
+<!-- date-picker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 <!-- Summernote -->
@@ -31,6 +35,9 @@
 <script src="{{url('plugins/codemirror/mode/htmlmixed/htmlmixed.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+<!-- date-range-picker -->
+<script src="{{url('plugins/daterangepicker/daterangepicker.js')}}"></script>
+<!-- bootstrap datepicker -->
 @yield('scripts')
 <!-- AdminLTE App -->
 <script src="{{url('js/admin_js/adminlte.js')}}"></script>

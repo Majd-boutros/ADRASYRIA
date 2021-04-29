@@ -23,7 +23,9 @@
     </div>
 
 
-    {!! $impact['description'] !!}
+{{--    {!! $impact['description'] !!}--}}
+
+    <!-- Here -->
 
 
 </div>
